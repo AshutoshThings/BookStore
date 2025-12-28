@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Prata&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-bogle: "BBH Bogle", ui-sans-serif, system-ui;
+  --font-raleway: "Raleway", ui-sans-serif;
+  --font-prata: "Prata", ui-sans-serif;
+}
