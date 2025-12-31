@@ -25,7 +25,7 @@ const Hero = () => {
 
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="../src/assets/Cage.jpeg"
+            src="/assets/Cage.jpeg"
             alt="Book cover"
             className="w-4/5 md:w-3/4 shadow-xl rounded-lg"
           />

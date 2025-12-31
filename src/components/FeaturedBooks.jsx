@@ -14,35 +14,35 @@ const FeaturedBooks = () => {
       <div className="flex gap-8 my-8 w-3/4 flex-wrap justify-center">
         <Cards
           id={1}
-          bookImageURL={"/src/assets/books/book1.jpg"}
+          bookImageURL={"/assets/books/book1.jpg"}
           bookTitle={"Regretting You"}
           bookAuthor={"Colleen Hoover"}
           bookPrice={299}
         />
         <Cards
           id={2}
-          bookImageURL={"/src/assets/books/book2.jpeg"}
+          bookImageURL={"/assets/books/book2.jpeg"}
           bookTitle={"What we can know"}
           bookAuthor={"Ian McEvan"}
           bookPrice={149}
         />
         <Cards
           id={3}
-          bookImageURL={"/src/assets/books/book3.jpeg"}
+          bookImageURL={"/assets/books/book3.jpeg"}
           bookTitle={"The Stranger"}
           bookAuthor={"Albert Camus"}
           bookPrice={179}
         />
         <Cards
           id={4}
-          bookImageURL={"/src/assets/books/book4.jpeg"}
+          bookImageURL={"/assets/books/book4.jpeg"}
           bookTitle={"Metamorphosis"}
           bookAuthor={"Franz Kafka"}
           bookPrice={89}
         />
         <Cards
           id={5}
-          bookImageURL={"/src/assets/books/book5.jpeg"}
+          bookImageURL={"/assets/books/book5.jpeg"}
           bookTitle={"Things fall apart"}
           bookAuthor={"Chinua Achebe"}
           bookPrice={179}
