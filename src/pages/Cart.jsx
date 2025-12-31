@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
-import CartCard from "../components/cartCard";
+import CartCard from "../components/CartCard";
 import CartCheckout from "../components/CartCheckout";
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
