@@ -1,18 +1,56 @@
 import React from "react";
+import { useCart } from "../context/CartContext";
 
-const Cards = ({ bookImageURL, bookTitle, bookAuthor, bookPrice }) => {
+const Cards = ({ id, bookImageURL, bookTitle, bookAuthor, bookPrice }) => {
+  const { cartItems, addToCart } = useCart();
+
+  const isInCart = cartItems.some((item) => item.id === id);
+
+  const handleAddToCart = () => {
+    if (!isInCart) {
+      addToCart({
+        id,
+        title: bookTitle,
+        author: bookAuthor,
+        price: bookPrice,
+        image: bookImageURL,
+      });
+    }
+  };
+
   return (
-    <div className="w-72 bg-[#F7F5EE] border border-[#E5E2D8]">
-      <div className="relative w-full overflow-hidden group">
+    <div className="w-72 bg-[#F7F5EE] border border-[#E5E2D8] group">
+      <div className="relative w-full overflow-hidden">
         <img
           src={bookImageURL}
           alt={bookTitle}
           className="w-full h-96 object-cover"
         />
 
-        <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-          <button className="w-full bg-black text-white py-4 font-semibold tracking-wide cursor-pointer">
-            ADD TO CART
+        <div
+          className={`
+            absolute bottom-0 left-0 right-0
+            transition-transform duration-300
+            ${
+              isInCart
+                ? "translate-y-0"
+                : "translate-y-full group-hover:translate-y-0"
+            }
+          `}
+        >
+          <button
+            onClick={handleAddToCart}
+            disabled={isInCart}
+            className={`
+              w-full py-4 font-semibold tracking-wide transition-colors duration-300
+              ${
+                isInCart
+                  ? "bg-green-600 text-white cursor-not-allowed"
+                  : "bg-black text-white hover:bg-[#333]"
+              }
+            `}
+          >
+            {isInCart ? "ADDED TO CART ✓" : "ADD TO CART"}
           </button>
         </div>
       </div>

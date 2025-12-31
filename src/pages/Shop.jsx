@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Cards from "../components/Cards";
+import { Mosaic } from "react-loading-indicators";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +26,9 @@ const Shop = () => {
 
   if (!usdToInr || products.length === 0) {
     return (
-      <div className="text-center mt-20 text-xl">Loading Latest Stocks...</div>
+      <div className="flex justify-center items-center bg-[#c7c0b5/10] h-screen">
+        <Mosaic color="#616161" size="large" text="" textColor="" />
+      </div>
     );
   }
 
@@ -39,6 +43,7 @@ const Shop = () => {
           {products.map((book) => (
             <Cards
               key={book.id}
+              id={book.id}
               bookImageURL={book.image}
               bookTitle={book.title}
               bookAuthor={book.category}
@@ -47,6 +52,8 @@ const Shop = () => {
           ))}
         </div>
       </div>
+      <div className="text-center text-xl my-20"> (20 Products)</div>
+      <Footer />
     </div>
   );
 };
