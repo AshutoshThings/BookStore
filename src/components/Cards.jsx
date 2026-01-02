@@ -1,5 +1,6 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
+import { motion } from "motion/react";
 
 const Cards = ({ id, bookImageURL, bookTitle, bookAuthor, bookPrice }) => {
   const { cartItems, addToCart } = useCart();
@@ -19,7 +20,13 @@ const Cards = ({ id, bookImageURL, bookTitle, bookAuthor, bookPrice }) => {
   };
 
   return (
-    <div className="w-72 bg-[#F7F5EE] border border-[#E5E2D8] group">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="w-72 bg-[#F7F5EE] border border-[#E5E2D8] group"
+    >
       <div className="relative w-full overflow-hidden">
         <img
           src={bookImageURL}
@@ -60,7 +67,7 @@ const Cards = ({ id, bookImageURL, bookTitle, bookAuthor, bookPrice }) => {
         <p className="text-gray-600 uppercase">{bookAuthor}</p>
         <p className="text-lg font-semibold text-[#7A6A3A]">₹ {bookPrice}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
